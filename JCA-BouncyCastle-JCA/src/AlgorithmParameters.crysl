@@ -28,8 +28,8 @@ CONSTRAINTS
 	algorithm in {"AES", "DiffieHellman", "DH", "OAEP", "PBEWithHmacSHA224AndAES_128", 
 		"PBEWithHmacSHA256AndAES_128", "PBEWithHmacSHA384AndAES_128", "PBEWithHmacSHA512AndAES_128", 
 		"PBEWithHmacSHA224AndAES_256", "PBEWithHmacSHA256AndAES_256", "PBEWithHmacSHA384AndAES_256", 
-		"PBEWithHmacSHA512AndAES_256", "Camellia", "ChaCha7539", "DSA", "DiffieHellman", "DH", "EC", "ElGamal", "PBKDF2", "Rijndael", "Salsa20", "Tnepres", 
-		"Serpent", "SHACAL-2", "Shacal2", "Twofish", "XSalsa20", "OAEP", "PSS", "RSAPSS", "SHA256withRSA/PSS", "SHA384withRSA/PSS", 
+		"PBEWithHmacSHA512AndAES_256", "Camellia", "ChaCha7539", "DSA","EC", "ElGamal", "PBKDF2", "Rijndael", "Salsa20", "Tnepres", 
+		"Serpent", "SHACAL-2", "Shacal2", "Twofish", "XSalsa20", "PSS", "RSAPSS", "SHA256withRSA/PSS", "SHA384withRSA/PSS", 
 		"SHA512withRSA/PSS", "SHA256WITHRSAANDMGF1", "SHA386WITHRSAANDMGF1", "SHA512WITHRSAANDMGF1", "SHA3-256WITHRSAANDMGF1", 
 		"SHA3-386WITHRSAANDMGF1", "SHA3-512WITHRSAANDMGF1"};
 
@@ -46,7 +46,6 @@ REQUIRES
 	algorithm in {"PBEWithHmacSHA224AndAES_128", "PBEWithHmacSHA256AndAES_128", "PBEWithHmacSHA384AndAES_128", 
 		"PBEWithHmacSHA512AndAES_128", "PBEWithHmacSHA224AndAES_256", "PBEWithHmacSHA256AndAES_256", 
 		"PBEWithHmacSHA384AndAES_256", "PBEWithHmacSHA512AndAES_256"} => preparedPBE[paramSpec];
-	algorithm in {"OAEP"} => preparedOAEP[paramSpec];
     
 ENSURES 
 	preparedAlg[this, algorithm] after Init;

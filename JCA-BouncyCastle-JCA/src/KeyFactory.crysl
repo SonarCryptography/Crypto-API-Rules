@@ -21,9 +21,13 @@ ORDER
 	Get, (GenPriv | GenPubl)*
 
 CONSTRAINTS
-	algorithm in {"DiffieHellman", "DH", "DSA", "EC", "ECDH", "ECDHC", "ECDSA", "RSA", "ElGamal",
-				"X.509", "McElieceKobaraImai", "McEliecePointcheval", "McElieceFujisaki", "McEliece",
-				"McEliece-CCA2", "NH", "QTESLA", "Rainbow", "SPHINCS256", "XMSS", "XMSSMT"};
+	algorithm in { "RSA", "RSASSA-PSS",
+			"EC", "ECDH", "ECDSA",
+			"DiffieHellman", "DH",
+			"Ed25519", "Ed448", "EdDSA",
+			"X25519", "X448", "XDH",
+			"ML-KEM", "ML-DSA", "SLH-DSA",
+			"XMSS", "XMSSMT","McEliece"};
 
 REQUIRES
 	speccedKey[keySpec, _];	

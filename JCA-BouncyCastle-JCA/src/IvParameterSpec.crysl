@@ -16,7 +16,10 @@ ORDER
 CONSTRAINTS
 	length[iv] >= offset + len;
 	offset >= 0;
-	len > 0;
+	length[iv] >= 12;
+	len >= 12;
+	neverTypeOf[iv, java.lang.String];
+	notHardCoded[iv];
 	
 REQUIRES
 	randomized[iv];

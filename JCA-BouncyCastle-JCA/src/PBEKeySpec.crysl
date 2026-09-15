@@ -21,9 +21,13 @@ ORDER
 	Con, ClearPass
  	
 CONSTRAINTS
-	iterationCount >= 10000;
+	iterationCount >= 600000;
+        length[salt] >= 16;
+        keyLength >= 128;
 	neverTypeOf[password, java.lang.String];
 	notHardCoded[password] ;
+        neverTypeOf[salt, java.lang.String];
+	notHardCoded[salt];
 
 REQUIRES
 	randomized[salt];	

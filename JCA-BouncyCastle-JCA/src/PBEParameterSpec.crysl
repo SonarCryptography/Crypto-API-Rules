@@ -14,7 +14,10 @@ ORDER
 	Con
 	
 CONSTRAINTS
-	iterationCount >= 10000;	
+	iterationCount >= 600000;
+        length[salt] >= 16;
+        neverTypeOf[salt, java.lang.String];
+	notHardCoded[salt];	
 
 REQUIRES
 	randomized[salt];

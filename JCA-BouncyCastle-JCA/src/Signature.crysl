@@ -45,11 +45,24 @@ ORDER
 	Get, ((InitSign+, (Update+, Sign+)+ )+ | (InitVerify+, (Update*, Verify+)+ )+ )
 
 CONSTRAINTS
-	algorithm in {"SHA384withECDSA", "SHA512withECDSA",
-			"ECDDSA", "SHA256WITHECDDSA", "SHA384WITHECDDSA", "SHA512WITHECDDSA", "SHA3-256WITHECDDSA", "SHA3-384WITHECDDSA", 
-			"SHA3-512WITHECDDSA", "SHA256WITHECNR", "SHA384WITHECNR", "SHA512WITHECNR", "SHA256withECDSA", "SHA256withDSA", 
-			 "SHA384withRSA", "SHA512withRSA", "SHA256withRSA", "SHA384withDSA", "SHA512withDSA", 
-			"QTESLA"};
+
+    algorithm in {
+        "SHA256withECDSA",
+        "SHA384withECDSA",
+        "SHA512withECDSA",
+        "SHA3-256withECDSA",
+        "SHA3-384withECDSA",
+        "SHA3-512withECDSA",
+        "SHA256withRSA",
+        "SHA384withRSA",
+        "SHA512withRSA",
+        "RSASSA-PSS",
+        "Ed25519",
+        "Ed448"
+    };
+
+
+
     length[input] >= offset + len;
     offset >= 0;
     len > 0;

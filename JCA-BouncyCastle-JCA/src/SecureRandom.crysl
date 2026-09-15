@@ -39,7 +39,10 @@ ORDER
 	Ins, (Seed?, End*)*
  	
 CONSTRAINTS
-	algorithm in {"SHA1PRNG", "Windows-PRNG", "NativePRNG", "NativePRNGBlocking", "NativePRNGNonBlocking", "PKCS11", "DEFAULT", "NONCEANDIV"};
+        //"SHA1PRNG" is removed from the list, (refs: https://android-developers.googleblog.com/2016/06/security-crypto-provider-deprecated-in.html?utm_source=gemini  , https://precli.readthedocs.io/0.5.9/rules/java/stdlib/java-security-weak-random/)
+	algorithm in {"Windows-PRNG", "NativePRNG", "NativePRNGBlocking", "NativePRNGNonBlocking", "PKCS11", "DEFAULT", "NONCEANDIV"};
+
+notHardCoded[seed];
 	
 REQUIRES	
 	randomized[seed];
