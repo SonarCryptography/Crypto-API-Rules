@@ -39,5 +39,21 @@ REQUIRES
 ENSURES
 	speccedKey[this, keyLength] after Con;
 
+	// Sets iteration count marker for 256-bit and 512-bit hashes
+	iterationCount >= 600000 => pbeKeySpec_minIterCount_sha256[this] after Con;
+	iterationCount >= 220000 => pbeKeySpec_minIterCount_sha512[this] after Con;
+
+	// Sets key length marker for 256-bit and 512-bit hashes
+	keyLength >= 256 => pbeKeySpec_keyLength_256[this] after Con;
+	keyLength >= 512 => pbeKeySpec_keyLength_512[this] after Con;
+
 NEGATES
 	speccedKey[this, _] after ClearPass;
+
+	// Clears iteration count marker
+	pbeKeySpec_minIterCount_sha256[this] after ClearPass;
+	pbeKeySpec_minIterCount_sha512[this] after ClearPass;
+
+	// Clears key length marker
+	pbeKeySpec_keyLength_256[this] after ClearPass;
+	pbeKeySpec_keyLength_512[this] after ClearPass;
