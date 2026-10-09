@@ -9,6 +9,10 @@ EVENTS
 	
 ORDER
 	Con
+
+CONSTRAINTS
+	outputLen >= 128;    
+//constraints added: recommended at least 128 (at least 80 for Legacy but not recommended)
 	
 ENSURES
 	preparedHMAC[this];

@@ -25,9 +25,11 @@ ORDER
 	Get, Init, Gen
 
 CONSTRAINTS
-	algorithm in {"RSA", "DSA", "DiffieHellman", "DH", "EC", "ECDSA", "ECDH", "ECDHWITHSHA1KDF", "ECDHC", 
-			"ECIES", "ElGamal", "McElieceKobaraImai", "McEliecePointcheval", "McElieceFujisaki", 
-			"McEliece", "McEliece-CCA2", "NH", "QTESLA", "Rainbow", "SPHINCS256", "XMSS", "XMSSMT"};
+	algorithm in {"RSA", "DSA", "DiffieHellman", "DH", "EC", "ECDSA", "ECDH", "ECDHWITHSHA1KDF", "ECDHC", "ECIES", "McElieceKobaraImai", "McEliecePointcheval", "McElieceFujisaki", "McEliece", "McEliece-CCA2",  "SPHINCS256", "XMSS", "XMSSMT","EdDSA", "Ed25519", "Ed448"};
+
+//removed "ElGamal","Rainbow","NH", "QTESLA"
+//Added "EdDSA", "Ed25519", "Ed448" (FIPS 186-5; recommended by OWASP).
+
 	algorithm in {"RSA"} => keysize in {4096, 3072};
 	algorithm in {"DSA"} => keysize in {3072};
 	algorithm in {"DiffieHellman", "DH"} => keysize in {3072};

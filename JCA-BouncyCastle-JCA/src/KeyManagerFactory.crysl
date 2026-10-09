@@ -25,7 +25,8 @@ ORDER
 CONSTRAINTS
 	neverTypeOf[password, java.lang.String];
 	notHardCoded[password];
-	algorithm in {"PKIX", "SunX509", "X509", "X.509"};
+	algorithm in {"PKIX", "SunX509", "X509", "X.509", "NewSunX509"};
+//added:"NewSunX509"
 
 REQUIRES
 	generatedKeyStore[keyStore];

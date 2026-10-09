@@ -12,7 +12,8 @@ ORDER
 	Con
 	
 CONSTRAINTS
-	keysize in {3072, 4096}; //BSI TR-02102-1 Recommends atleast 3000bits for keys
+	keysize in {3072, 4096, 6144, 7680, 8192}; //BSI TR-02102-1 Recommends atleast 3000bits for keys
+// added 6144, 7680, 8192 based on NIST SP 800-57 
 	publicExponent in {65537};
 	 
 ENSURES
